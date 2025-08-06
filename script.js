@@ -2,9 +2,9 @@ let bgbottom = document.getElementById("bg-bottom-color");
 let bgtop = document.getElementById("bg-top-color");
 const textcolor = document.getElementById("txt-color");
 const boxcolor = document.getElementById("box-color");
-// const bordercolor = document.getElementById("border-color");
+const bordercolor = document.getElementById("border-color");
 document.getElementById("bg-bottom-color").addEventListener("input", () => {
-  // document.body.style.background = `linear-gradient(to left top,${bgbottom.value},${bgtop.value})`;
+  document.body.style.background = `linear-gradient(to left top,${bgbottom.value},${bgtop.value})`;
   document.body.style.backgound = `${bgtop.value}`
 })
 document.getElementById("bg-top-color").addEventListener("input", () => {
