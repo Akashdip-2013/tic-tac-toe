@@ -1,7 +1,7 @@
 let boxes = document.querySelectorAll(".b");
 let isstart = document.getElementById("start");
 let issingle = document.getElementById("single");
-let status = document.getElementById("status");
+let stts = document.getElementById("status");
 let start = 0;
 let draw = 0;
 let turn = 0; // turn-0 x turn-1 o
@@ -136,11 +136,11 @@ function boxind(ind) {
     // ----------------------------
     b[ind] = turn ? 2 : 1;
     box.innerHTML = turn ? "O" : "X";
-    status.innerHTML = turn ? "PLAYER X'S TURN" : "PLAYER O'S TURN";
+    stts.innerHTML = turn ? "PLAYER X'S TURN" : "PLAYER O'S TURN";
     turn = !turn;
     let win = checkwin();
     if (win != "") {
-      status.innerHTML = `PLAYER ${win} WINS`;
+      stts.innerHTML = `PLAYER ${win} WINS`;
       start = turn = 0;
       for (let i = 0; i < 8; i++) {
         if (b[winInd[i][0]] == b[winInd[i][1]] && b[winInd[i][1]] == b[winInd[i][2]] && b[winInd[i][0]] != 0) {
@@ -150,7 +150,7 @@ function boxind(ind) {
       }
       return;
     } else if (draw) {
-      status.innerHTML = `IT'S A DRAW`;
+      stts.innerHTML = `IT'S A DRAW`;
       start = turn = 0;
       return;
     }
@@ -158,10 +158,10 @@ function boxind(ind) {
     if (single) {
       aiturn();
       turn = !turn;
-      status.innerHTML = turn ? "PLAYER O'S TURN" : "PLAYER X'S TURN";
+      stts.innerHTML = turn ? "PLAYER O'S TURN" : "PLAYER X'S TURN";
       let win = checkwin();
       if (win != "") {
-        status.innerHTML = `PLAYER ${win} WINS`;
+        stts.innerHTML = `PLAYER ${win} WINS`;
         start = turn = 0;
         for (let i = 0; i < 8; i++) {
           if (b[winInd[i][0]] == b[winInd[i][1]] && b[winInd[i][1]] == b[winInd[i][2]] && b[winInd[i][0]] != 0) {
@@ -171,7 +171,7 @@ function boxind(ind) {
         }
         return;
       } else if (draw) {
-        status.innerHTML = `IT'S A DRAW`;
+        stts.innerHTML = `IT'S A DRAW`;
         start = turn = 0;
         return;
       }
@@ -188,8 +188,8 @@ for (let i = 0; i < 9; i++) {
 }
 // =============================================
 isstart.addEventListener("click", () => {
-  status.innerHTML = ""
-  status.innerHTML = "PLAYER X'S TURN";
+  stts.innerHTML = ""
+  stts.innerHTML = "PLAYER X'S TURN";
   start = 1;
   draw = 0;
   for (let i = 0; i < 9; i++) {
@@ -201,8 +201,8 @@ isstart.addEventListener("click", () => {
 // =============================================
 issingle.addEventListener("click", () => {
   issingle.innerHTML = single ? "SWITCH TO SINGLE PLAYER" : "SWITCH TO DOUBLE PLAYER";
-  status.innerHTML = ""
-  status.innerHTML = "PLAYER X'S TURN";
+  stts.innerHTML = ""
+  stts.innerHTML = "PLAYER X'S TURN";
   single = !single;
   start = 1;
   draw = 0;

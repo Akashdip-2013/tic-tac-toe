@@ -1,134 +1,130 @@
+:root {
+    --box: #f0f0f0;
+    /* light gray boxes */
+    --btn: #333;
+    /* soft blue buttons */
+    --btn-border: #2c6ebf;
+    /* darker blue border */
+    --btn-text: #ffffff;
+    /* white button text */
+    --bg-game_box: #ffffff;
+    /* pure white game box */
+    --bg-text: #333333;
+    /* dark text */
+    --bg-body: #ccc;
+    /* off-white page background */
+    --btn-hover: #000;
+    /* darker blue on hover */
+    --text-shadow: rgba(0, 0, 0, 0.1);
+    /* subtle shadow */
+    --theme-btn: #000;
+    --theme-text: white;
+}
+
 * {
     padding: 0;
-    margin: 0;
-    /* color: wheat; */
+    margin: auto;
+    text-align: center;
+    width: 90vw;
+    max-width: 300px;
+    transition: all 1000ms;
 }
 
 body {
-    /* background: linear-gradient(to top left, rgb(22, 22, 43), rgb(74, 101, 74)); */
-    color: wheat;
-    transition: 0.3s;
-    background-color: #333;
-    height: 100vh;
-    min-width: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--bg-body);
+    color: var(--bg-text);
 }
 
-header {
-    /* background: linear-gradient(to bottom left, rgb(16 24 47), rgb(73 37 60)); */
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 5px 30px;
-    font-weight: 900;
-    text-align: center;
-    /* box-shadow: 0px 1px 6px; */
-    box-shadow: 0px 0px 8px 1px black;
-    width: fit-content;
-    border-radius: 10px;
-    font-size: 30px;
-}
-
-main {
-    margin: auto;
+.name {
+    height: 10vh;
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-around;
-    /* align-items: center; */
-    /* align-items: stretch; */
-
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    font-size: 35px;
+    text-shadow: 4px 1px 5px var(--text-shadow);
 }
 
-button {
-    cursor: pointer;
+.theme_changer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.left {
-    flex: 1;
-    box-shadow: 0px 0px 8px 1px black;
-    /* background: linear-gradient(to bottom left, rgb(16 24 47), rgb(73 37 60)); */
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    width: fit-content;
-    height: fit-content;
-    border: 3px solid black;
+.game_box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    align-items: space-between;
-    gap: 20px;
-
-    height: auto;
+    gap: 15px;
+    background-color: var(--bg-game_box);
+    color: var(--bg-text);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
 }
 
-#status {
-    /* display: flex;  */
-    justify-content: space-between;
-    font-weight: 900;
-    font-size: 30px;
-}
-
-#container {
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    padding: 10px;
-    gap: 10px;
-    border: 2px solid wheat;
-    border-radius: 10px;
-
-    box-shadow: 0px 0px 15px;
-}
-
-.b {
-    height: 50px;
-    width: 50px;
-    border: 2px solid red;
-    border-radius: 8px;
-
-    box-shadow: 0px 0px 5px 2px;
-    cursor: pointer;
-}
-
-.right {
-    /* background: linear-gradient(to bottom left, rgb(16 24 47), rgb(73 37 60)); */
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 10px;
-    width: fit-content;
+    gap: 5px;
     padding: 20px;
-    flex: 1;
-    border: 3px solid black;
-    font-weight: 900;
-    font-size: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px 1px black;
-
-    height: auto;
+    width: 80%;
+    height: 100%;
+    max-width: fit-content;
 }
 
-.property_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
+.box {
+    max-width: 70px;
+    width: 15vw;
+    max-height: 70px;
+    height: 15vw;
+    border: 2px solid black;
+    background-color: var(--box);
+    cursor: pointer;
+    border-radius: 11px;
 
-
-.b {
-    height: 60px;
-    width: 60px;
-    border: 2px solid red;
-    border-radius: 8px;
-
-    /* Add these lines for centering text */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 2.5rem;
     font-weight: bold;
+    user-select: none;
+}
+
+button {
+    height: 35px;
+    width: 100px;
+    min-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--btn);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-border);
+    cursor: pointer;
+    font-weight: 900;
+}
+
+button:hover {
+    scale: 1.2;
+    transition: all 300ms ease-in-out;
+    background-color: var(--btn-hover);
+    /* color: var(--theme-text); */
+}
+
+button {
+    background-color: var(--theme-btn);
+    color: var(--theme-text);
+}
+
+.single {
+    margin-bottom: 10px;
+}
+
+.win {
+    background-color: lightgreen !important;
+    transition: background-color 0.3s ease;
 }
